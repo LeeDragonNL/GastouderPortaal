@@ -18,6 +18,10 @@ public class Vliegtuig {
         this.isNederlandsVliegtuig = isNederlandsVliegtuig;
     }
 
+    //methode neemt de berekeningen van de menthode passagiergewicht() en bagageAfhandeling()
+    //die worden bij elkaar opgeteld en vervolgens wordt er gekeken of het vliegtuig nederlands is
+    //zo ja wordt er 21% btw erbij berekend en dan gereturned.
+    //zo nee wordt het totaalbedrag zonder btw gereturned.
     public double prijsberekengingFULL(){
         int TotaalBedrag = passagierGewicht() + bagageAfhandeling();
 
@@ -28,19 +32,6 @@ public class Vliegtuig {
             return TotaalBedrag;
         }
     }
-
-    public int prijsberekening(){
-        if (gewicht < 1000){
-            return 100;
-        }
-        else if(gewicht < 5000){
-            return 500;
-        }
-        else {
-            return 2500;
-        }
-    }
-
 
     public int passagierGewicht(){
         if (passagier <= 2){
@@ -74,6 +65,18 @@ public class Vliegtuig {
         }
         else{
             return 0;
+        }
+    }
+//Berekening voor de Equivalentieklassen
+    public int prijsberekening(){
+        if (gewicht < 1000){
+            return 100;
+        }
+        else if(gewicht < 5000){
+            return 500;
+        }
+        else {
+            return 2500;
         }
     }
 }
