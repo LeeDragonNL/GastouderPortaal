@@ -15,7 +15,12 @@ public class MainController{
     private Scene scene;
 
     @FXML
-    public void onOmzetButton(ActionEvent event) {
+    public void onOmzetButton(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Main-menuMFX.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
     @FXML
@@ -27,7 +32,8 @@ public class MainController{
         stage.show();
     }
     @FXML
-    public void onExitButton(ActionEvent event) {
+    public void onExitButton(ActionEvent event) throws IOException {
+        System.exit(0);
 
     }
 
