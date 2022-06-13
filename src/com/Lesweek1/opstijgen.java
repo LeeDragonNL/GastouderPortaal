@@ -11,7 +11,7 @@ public class opstijgen {
         this.tegenwind = tegenwind;
     }
 
-    public boolean magOpstijgen(){
+    public boolean magOpstijgen() {
         return toestemming && (gewicht < 1000 || tegenwind > 50);
     }
 

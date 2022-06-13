@@ -22,60 +22,51 @@ public class Vliegtuig {
     //die worden bij elkaar opgeteld en vervolgens wordt er gekeken of het vliegtuig nederlands is
     //zo ja wordt er 21% btw erbij berekend en dan gereturned.
     //zo nee wordt het totaalbedrag zonder btw gereturned.
-    public double prijsberekengingFULL(){
+    public double prijsberekengingFULL() {
         int TotaalBedrag = passagierGewicht() + bagageAfhandeling();
 
-        if (isNederlandsVliegtuig){
+        if (isNederlandsVliegtuig) {
             return TotaalBedrag * 1.21;
-        }
-        else {
+        } else {
             return TotaalBedrag;
         }
     }
 
-    public int passagierGewicht(){
-        if (passagier <= 2){
-            if (gewicht < 1000){
+    public int passagierGewicht() {
+        if (passagier <= 2) {
+            if (gewicht < 1000) {
                 return 100;
-            }
-            else if(gewicht < 5000){
+            } else if (gewicht < 5000) {
                 return 500;
-            }
-            else {
+            } else {
                 return 2500;
             }
-        }
-
-        else{
-            if (gewicht < 1000){
+        } else {
+            if (gewicht < 1000) {
                 return 150;
-            }
-            else if(gewicht < 5000){
+            } else if (gewicht < 5000) {
                 return 750;
-            }
-            else {
+            } else {
                 return 3750;
             }
         }
     }
 
-    public int bagageAfhandeling(){
-        if (bagageAfhandeling){
+    public int bagageAfhandeling() {
+        if (bagageAfhandeling) {
             return 800;
-        }
-        else{
+        } else {
             return 0;
         }
     }
-//Berekening voor de Equivalentieklassen
-    public int prijsberekening(){
-        if (gewicht < 1000){
+
+    //Berekening voor de Equivalentieklassen
+    public int prijsberekening() {
+        if (gewicht < 1000) {
             return 100;
-        }
-        else if(gewicht < 5000){
+        } else if (gewicht < 5000) {
             return 500;
-        }
-        else {
+        } else {
             return 2500;
         }
     }
