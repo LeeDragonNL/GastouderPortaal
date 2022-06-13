@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.ProfielMainController">
+   <children>
+      <MFXButton fx:id="Verwijderen" layoutX="326.0" layoutY="122.0" onAction="#onVerwijderButton" prefHeight="51.0" prefWidth="189.0" text="VERWIJDEREN">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </MFXButton>
+      <MFXButton fx:id="Toevoegen" layoutX="89.0" layoutY="122.0" onAction="#onToevoegenButton" prefHeight="51.0" prefWidth="182.0" text="TOEVOEGEN">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </MFXButton>
+      <MFXButton fx:id="Bekijk" layoutX="89.0" layoutY="226.0" onAction="#onBekijkButton" prefHeight="51.0" prefWidth="182.0" text="BEKIJK ALLES">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </MFXButton>
+      <MFXButton fx:id="Bewerken" layoutX="329.0" layoutY="226.0" onAction="#onBewerkButton" prefHeight="51.0" prefWidth="182.0" text="BEWERKEN">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </MFXButton>
+      <Label layoutX="256.0" layoutY="37.0" text="PROFIEL">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</fx:root>
