@@ -16,7 +16,7 @@ public class MainController{
 
     @FXML
     public void onOmzetButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Main-menuMFX.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Omzet-view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -25,7 +25,7 @@ public class MainController{
     }
     @FXML
     public void onProfielButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Profiel-Main-view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Profiel_Main_view.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
