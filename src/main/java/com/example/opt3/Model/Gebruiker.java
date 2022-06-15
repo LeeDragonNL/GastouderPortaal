@@ -32,6 +32,10 @@ public abstract class Gebruiker {
 
 
      public Gebruiker(String name, String straat, String postcode, int huisnummer, double loon, double totaleomzet, int uren, String username, String password) {
+            this.adres = new Adres();
+            this.omzet = new Omzet();
+            this.login = new Login();
+
             this.name = name;
             this.adres.setStraatnaam(straat);
             this.adres.setPostcode(postcode);
