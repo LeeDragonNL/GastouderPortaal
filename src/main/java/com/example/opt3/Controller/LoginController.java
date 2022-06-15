@@ -1,6 +1,7 @@
 package com.example.opt3.Controller;
 
 import com.example.opt3.Model.Gebruiker;
+import com.example.opt3.Model.Login;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
@@ -17,5 +18,12 @@ public class LoginController {
     }
 
     public void onLoginButton(ActionEvent event) {
+        Login login = new Login();
+        if (login.loginCheck(username.getText(),password.getText())){
+            System.out.println("welkom");
+        }
+        else {
+            System.out.println("not welcome");
+        }
     }
 }

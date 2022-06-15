@@ -5,6 +5,15 @@ public class Adres {
     String postcode;
     int huisnummer;
 
+    public Adres(){
+
+    }
+    public Adres(String straatnaam, String postcode, int huisnummer) {
+        this.straatnaam = straatnaam;
+        this.postcode = postcode;
+        this.huisnummer = huisnummer;
+    }
+
     public String getStraatnaam() {
         return straatnaam;
     }

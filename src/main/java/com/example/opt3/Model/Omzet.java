@@ -5,7 +5,6 @@ public class Omzet {
     double totaleOmzet;
     int totaleUren;
 
-
     public double getLoon() {
         return loon;
     }
@@ -29,6 +28,5 @@ public class Omzet {
     public void setTotaleUren(int totaleUren) {
         this.totaleUren = totaleUren;
     }
-
 
 }

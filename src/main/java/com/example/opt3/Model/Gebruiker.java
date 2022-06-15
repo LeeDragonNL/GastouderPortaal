@@ -7,10 +7,10 @@ import javafx.collections.ObservableList;
 import static io.github.palexdev.materialfx.utils.RandomUtils.random;
 
 public abstract class Gebruiker {
-        private String name;
-        private Adres adres;
-        private Omzet omzet;
-        private Login login;
+        String name;
+        Adres adres;
+        Omzet omzet;
+        Login login;
         public static final ObservableList<Babies> people;
         static {
             people = FXCollections.observableArrayList(
@@ -26,10 +26,21 @@ public abstract class Gebruiker {
             );
         }
 
-        public Gebruiker() {
-//            this.adres = new Adres();
-//            this.omzet = new Omzet();
+        public Gebruiker(){
 
+        }
+
+
+     public Gebruiker(String name, String straat, String postcode, int huisnummer, double loon, double totaleomzet, int uren, String username, String password) {
+            this.name = name;
+            this.adres.setStraatnaam(straat);
+            this.adres.setPostcode(postcode);
+            this.adres.setHuisnummer(huisnummer);
+            this.omzet.setLoon(loon);
+            this.omzet.setTotaleOmzet(totaleomzet);
+            this.omzet.setTotaleUren(uren);
+            this.login.setUsername(username);
+            this.login.setPassword(password);
         }
 
 
@@ -40,12 +51,12 @@ public abstract class Gebruiker {
         }
 
         public static double randomDouble(){
-        double max = 10.0;
+        double max = 10000;
         double min = 0;
         return random.nextDouble(max - min + 1) + min;
     }
 
-    public boolean loginCheck(String un, String pw){
+        public boolean loginCheck(String un, String pw){
         return un.equals(login.getUsername()) && pw.equals(login.getPassword());
     }
 

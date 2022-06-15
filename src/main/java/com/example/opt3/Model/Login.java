@@ -23,7 +23,16 @@ public class Login {
     }
 
     public boolean loginCheck(String un, String pw){
-        return un.equals(username) && pw.equals(password);
+        for (Gebruiker gebruiker: Database.data) {
+
+            if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        return false;
     }
 
 }
