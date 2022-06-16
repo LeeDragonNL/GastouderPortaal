@@ -2,38 +2,59 @@ package com.example.opt3.Controller;
 
 import com.example.opt3.Model.Babies;
 import com.example.opt3.Model.Gebruiker;
+import com.example.opt3.Model.ResourceLoader;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
-public class ToevoegenController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ToevoegenController implements Initializable {
 
     @FXML
-    public MFXTextField Name;
+    private MFXTextField Name;
     @FXML
-    public MFXTextField Age;
+    private MFXTextField Age;
     @FXML
-    public MFXTextField Street;
+    private MFXTextField Street;
     @FXML
-    public MFXTextField Postcode;
+    private MFXTextField Postcode;
     @FXML
-    public MFXTextField Feeding;
+    private MFXTextField Feeding;
     @FXML
-    public MFXTextField HouseNumber;
+    private MFXTextField HouseNumber;
     @FXML
-    public MFXTextField GEWICHT;
+    private MFXTextField GEWICHT;
     @FXML
-    public MFXButton Toevoegen;
+    private MFXButton Toevoegen;
     @FXML
     public MFXButton Terug;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Name.setPromptText("Naam...");
+        Age.setPromptText("Leeftijd...");
+        Street.setPromptText("Straatnaam...");
+        Postcode.setPromptText("Postcode");
+        Feeding.setPromptText("Voeding...");
+        HouseNumber.setPromptText("Huisnummer...");
+        GEWICHT.setPromptText("Gewicht");
 
-    public void onToevoegenButton(ActionEvent event) {
+    }
+
+    public void onToevoegenButton(ActionEvent event) throws IOException {
         Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),Feeding.getText(),HouseNumber.getText(),GEWICHT.getText());
         Gebruiker.people.add(newBaby);
+        ResourceLoader.changeScene(event,"Display-all.view.fxml");
     }
 
-    public void OnTerugbutton(ActionEvent event) {
+    public void OnTerugbutton(ActionEvent event) throws IOException {
+        ResourceLoader.changeScene(event,"Profiel_Main_view.fxml");
     }
+
+
 }

@@ -22,6 +22,8 @@ public class Login {
         this.password = password;
     }
 
+
+
     public boolean loginCheck(String un, String pw){
         for (Gebruiker gebruiker: Database.data) {
 
