@@ -1,5 +1,6 @@
 package com.example.opt3;
 
+import com.example.opt3.Controller.ScreenController;
 import com.example.opt3.Model.ResourceLoader;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Stepper-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("Main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Dashboard!");
         stage.setScene(scene);
