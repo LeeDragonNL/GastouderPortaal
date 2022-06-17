@@ -1,21 +1,13 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.MainApplication;
-import com.example.opt3.Model.Gebruiker;
 import com.example.opt3.Model.Login;
 import com.example.opt3.Model.ResourceLoader;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,8 +25,6 @@ public class LoginController implements Initializable {
         username.setPromptText("Username...");
         password.setPromptText("Wachtwoord...");
 
-
-        tryAgain.setText("Incorrect. controleer uw gebruikersnaam en wachtwoord");
     }
     public void onRegisterenButton(ActionEvent event) {
 
@@ -47,7 +37,7 @@ public class LoginController implements Initializable {
             ResourceLoader.changeScene(event,"Main-view.fxml");
         }
         else {
-
+            tryAgain.setText("Incorrect. controleer uw gebruikersnaam en wachtwoord");
             System.out.println("not welcome");
         }
     }

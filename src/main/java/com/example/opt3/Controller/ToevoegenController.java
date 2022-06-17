@@ -1,9 +1,6 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.Model.Babies;
-import com.example.opt3.Model.Gastouder;
-import com.example.opt3.Model.Gebruiker;
-import com.example.opt3.Model.ResourceLoader;
+import com.example.opt3.Model.*;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXStepperToggle;
@@ -12,12 +9,17 @@ import io.github.palexdev.materialfx.utils.NumberUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ToevoegenController implements Initializable {
+    @FXML
+    private Label bevestigLabel;
     @FXML
     private MFXCheckbox Bevestig;
     @FXML
@@ -59,14 +61,19 @@ public class ToevoegenController implements Initializable {
     }
 
     public void onToevoegenButton(ActionEvent event) throws IOException {
-        MFXStepperToggle step1 = new MFXStepperToggle();
+        Database database = new Database();
+
         if(Bevestig.isSelected()) {
             Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),HouseNumber.getText(),Feeding.getText(),GEWICHT.getText());
             Gebruiker.people.add(newBaby);
+            ArrayList<Babies> babies = database.reader("Babies.json");
+            babies.add(newBaby);
+            database.writer(babies, "Babies.json");
+
             ResourceLoader.changeScene(event, "Display-all-view.fxml");
         }
         else{
-
+            bevestigLabel.setTextFill(Color.color(1,0,0));
         }
     }
 

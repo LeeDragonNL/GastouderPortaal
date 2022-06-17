@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
 <?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="572.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.RegistreerController">
+<AnchorPane prefHeight="466.0" prefWidth="835.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.RegistreerController">
    <children>
-      <MFXComboBox layoutX="468.0" layoutY="300.0" prefHeight="40.0" prefWidth="180.0" />
-      <MFXComboBox layoutX="211.0" layoutY="300.0" prefHeight="40.0" prefWidth="180.0" />
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="301.0" layoutY="39.0" prefHeight="50.0" prefWidth="269.0" />
-      <Label layoutX="383.0" layoutY="14.0" text="BEDRIJFNAAM">
+      <MFXComboBox fx:id="soortBedrijf" alignment="CENTER" floatMode="ABOVE" layoutX="448.0" layoutY="277.0" prefHeight="32.0" prefWidth="131.0" promptText="Soort bedrijf">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="252.0" layoutY="276.0" text="SOORT BEDRIJF">
+         </font></MFXComboBox>
+      <MFXTextField fx:id="Bedrijfnaam" alignment="CENTER" floatMode="ABOVE" layoutX="283.0" layoutY="50.0" prefHeight="50.0" prefWidth="269.0" promptText="Bedrijfnaam">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="215.0" layoutY="118.0" prefHeight="50.0" prefWidth="269.0" />
-      <Label layoutX="304.0" layoutY="98.0" text="STRAATNAAM">
+         </font></MFXTextField>
+      <MFXTextField fx:id="Straatnaam" alignment="CENTER" floatMode="ABOVE" layoutX="66.0" layoutY="203.0" prefHeight="50.0" prefWidth="269.0" promptText="Straatnaam">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="301.0" layoutY="200.0" prefHeight="50.0" prefWidth="269.0" />
-      <Label layoutX="393.0" layoutY="180.0" text="POSTCODE">
+         </font></MFXTextField>
+      <MFXTextField fx:id="Postcode" alignment="CENTER" floatMode="ABOVE" layoutX="510.0" layoutY="203.0" prefHeight="50.0" prefWidth="131.0" promptText="Postcode">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="117.0" layoutY="384.0" prefHeight="50.0" prefWidth="269.0" />
-      <Label layoutX="501.0" layoutY="276.0" text="SOORT KINDEREN">
+         </font></MFXTextField>
+      <MFXTextField fx:id="Huinummer" alignment="CENTER" floatMode="ABOVE" layoutX="366.0" layoutY="203.0" prefHeight="50.0" prefWidth="104.0" promptText="Huisnummer">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="501.0" layoutY="118.0" prefHeight="50.0" prefWidth="80.0" />
-      <Label layoutX="497.0" layoutY="98.0" text="HUISNUMMER">
+         </font></MFXTextField>
+      <MFXComboBox fx:id="soortKinderen" alignment="CENTER" floatMode="ABOVE" layoutX="244.0" layoutY="277.0" prefHeight="33.0" prefWidth="148.0" promptText="soort Kinderen">
          <font>
             <Font size="14.0" />
+         </font></MFXComboBox>
+      <MFXTextField fx:id="Gebruikersnaam" alignment="CENTER" floatMode="ABOVE" layoutX="125.0" layoutY="128.0" prefHeight="50.0" prefWidth="269.0" promptText="Gebruikersnaam">
+         <font>
+            <Font size="14.0" />
+         </font></MFXTextField>
+      <MFXPasswordField fx:id="Wachtwoord" alignment="CENTER" floatMode="ABOVE" layoutX="439.0" layoutY="129.0" prefHeight="49.0" prefWidth="269.0" promptText="Wachtwoord">
+         <font>
+            <Font size="14.0" />
+         </font></MFXPasswordField>
+      <MFXTextField fx:id="Loon" alignment="CENTER" floatMode="ABOVE" layoutX="679.0" layoutY="203.0" prefHeight="50.0" prefWidth="88.0" promptText="Loon">
+         <font>
+            <Font size="14.0" />
+         </font></MFXTextField>
+      <MFXCheckbox fx:id="Bevestig" layoutX="335.0" layoutY="340.0" />
+      <Label layoutX="394.0" layoutY="337.0" text="Bevestig gegevens">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
-      <MFXTextField alignment="CENTER" floatMode="ABOVE" layoutX="454.0" layoutY="384.0" prefHeight="50.0" prefWidth="269.0" />
+      <MFXButton layoutX="462.0" layoutY="388.0" onAction="#onTerugButton" prefHeight="49.0" prefWidth="143.0" text="TERUG">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="249.0" layoutY="388.0" onAction="#onRegistrerenButton" prefHeight="49.0" prefWidth="143.0" text="REGISTREREN">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </MFXButton>
    </children>
 </AnchorPane>

@@ -11,6 +11,7 @@ public abstract class Gebruiker {
         Adres adres;
         Omzet omzet;
         Login login;
+        boolean status = false;
         final ObservableList<Babies> kinderen = FXCollections.observableArrayList();
         public static final ObservableList<Babies> people;
         static {

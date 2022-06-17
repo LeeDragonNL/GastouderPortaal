@@ -12,12 +12,12 @@
       <MFXButton fx:id="Omzet" layoutX="23.0" layoutY="39.0" onAction="#onOmzetButton" prefHeight="51.0" prefWidth="145.0" text="OMZET" />
       <MFXButton fx:id="Exit" layoutX="23.0" layoutY="340.0" onAction="#onExitButton" prefHeight="51.0" prefWidth="145.0" text="EXIT" />
       <MFXButton fx:id="Profiel" layoutX="23.0" layoutY="137.0" onAction="#onProfielButton" prefHeight="51.0" prefWidth="145.0" text="PROFIEL" />
-      <Label contentDisplay="CENTER" layoutX="284.0" layoutY="188.0" prefHeight="49.0" prefWidth="228.0" text="Bedrijfnaam">
+      <Label fx:id="Bedrijfnaam" contentDisplay="CENTER" layoutX="284.0" layoutY="188.0" prefHeight="49.0" prefWidth="228.0" text="Bedrijfnaam">
          <font>
             <Font name="Roboto Black" size="41.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="325.0" layoutY="103.0" prefHeight="49.0" prefWidth="145.0" text="welkom">
+      <Label contentDisplay="CENTER" layoutX="312.0" layoutY="104.0" prefHeight="49.0" prefWidth="173.0" text="WELKOM">
          <font>
             <Font name="Roboto Black" size="41.0" />
          </font>

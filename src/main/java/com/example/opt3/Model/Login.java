@@ -25,7 +25,12 @@ public class Login {
 
 
     public boolean loginCheck(String un, String pw){
-        for (Gebruiker gebruiker: Database.data) {
+        Database database = new Database();
+        ArrayList<Gebruiker> gebruikers = database.reader2("Gebruiker.json");
+
+
+
+        for (Gebruiker gebruiker: gebruikers) {
 
             if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
 
