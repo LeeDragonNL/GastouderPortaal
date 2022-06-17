@@ -1,9 +1,11 @@
 package com.example.opt3.Controller;
 
 import com.example.opt3.Model.Babies;
+import com.example.opt3.Model.Gastouder;
 import com.example.opt3.Model.Gebruiker;
 import com.example.opt3.Model.ResourceLoader;
 import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ToevoegenController implements Initializable {
-
+    @FXML
+    private MFXCheckbox Bevestig;
     @FXML
     private MFXTextField Name;
     @FXML
@@ -44,12 +47,15 @@ public class ToevoegenController implements Initializable {
         HouseNumber.setPromptText("Huisnummer...");
         GEWICHT.setPromptText("Gewicht");
 
+
     }
 
     public void onToevoegenButton(ActionEvent event) throws IOException {
-        Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),Feeding.getText(),HouseNumber.getText(),GEWICHT.getText());
+        Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),HouseNumber.getText(),Feeding.getText(),GEWICHT.getText());
         Gebruiker.people.add(newBaby);
-        ResourceLoader.changeScene(event,"Display-all.view.fxml");
+        if(Bevestig.isSelected()) {
+            ResourceLoader.changeScene(event, "Display-all-view.fxml");
+        }
     }
 
     public void OnTerugbutton(ActionEvent event) throws IOException {

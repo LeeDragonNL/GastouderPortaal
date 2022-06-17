@@ -18,16 +18,6 @@ public class MainApplication extends Application {
         stage.show();
     }
 
-//    FXMLLoader loader = new FXMLLoader(ResourceLoader.loadURL("Main-view.fxml"));
-//        loader.setControllerFactory(c -> new MainController(primaryStage));
-//    Parent root = loader.load();
-//    Scene scene = new Scene(root);
-//        scene.setFill(Color.TRANSPARENT);
-//        primaryStage.initStyle(StageStyle.TRANSPARENT);
-//        primaryStage.setScene(scene);
-//        primaryStage.setTitle("MaterialFX Demo");
-//        primaryStage.show();
-
     public static void main(String[] args) {
         launch();
     }

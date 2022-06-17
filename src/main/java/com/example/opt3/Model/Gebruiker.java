@@ -11,6 +11,7 @@ public abstract class Gebruiker {
         Adres adres;
         Omzet omzet;
         Login login;
+        final ObservableList<Babies> kinderen = FXCollections.observableArrayList();
         public static final ObservableList<Babies> people;
         static {
             people = FXCollections.observableArrayList(
@@ -80,5 +81,7 @@ public abstract class Gebruiker {
             this.adres = adres;
         }
 
-        abstract void profielAanmaken();
+        public ObservableList<Babies> getKinderen() {
+        return kinderen;
     }
+}
