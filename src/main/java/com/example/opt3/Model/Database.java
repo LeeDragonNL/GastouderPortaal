@@ -17,7 +17,7 @@ public class Database {
                             Gebruiker.randomDouble(),
                             Gebruiker.randomDouble(),
                             Gebruiker.randomInt(),
-                            "Franklin123",
+                            "test",
                             "test");
             fill.add(gastouder);
         }

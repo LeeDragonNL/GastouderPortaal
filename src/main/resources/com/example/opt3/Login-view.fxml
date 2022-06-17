@@ -19,5 +19,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#961fff" height="434.0" layoutX="583.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="18.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#961fff" height="17.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="592.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#961fff" height="17.0" layoutX="-1.0" layoutY="417.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="602.0" />
+      <Label fx:id="tryAgain" alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="287.0" prefHeight="17.0" prefWidth="310.0" text="..." textAlignment="CENTER" textFill="#c61c1c" />
    </children>
 </AnchorPane>

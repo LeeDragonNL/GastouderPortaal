@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,6 +21,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
+    @FXML
+    private Label tryAgain;
     @FXML
     private MFXPasswordField password;
     @FXML
@@ -29,6 +32,9 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         username.setPromptText("Username...");
         password.setPromptText("Wachtwoord...");
+
+
+        tryAgain.setText("Incorrect. controleer uw gebruikersnaam en wachtwoord");
     }
     public void onRegisterenButton(ActionEvent event) {
 
@@ -41,6 +47,7 @@ public class LoginController implements Initializable {
             ResourceLoader.changeScene(event,"Main-view.fxml");
         }
         else {
+
             System.out.println("not welcome");
         }
     }

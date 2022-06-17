@@ -28,6 +28,7 @@ public class Login {
         for (Gebruiker gebruiker: Database.data) {
 
             if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
+
                 return true;
             }
             else{

@@ -29,4 +29,5 @@ public class Omzet {
         this.totaleUren = totaleUren;
     }
 
+
 }
