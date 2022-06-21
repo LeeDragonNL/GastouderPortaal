@@ -7,8 +7,11 @@ module com.example.opt3 {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.annotation;
 
+    opens com.example.opt3 to javafx.fxml, com.fasterxml.jackson.databind;
     exports com.example.opt3;
-    exports com.example.opt3.Controller;
-    opens com.example.opt3 to javafx.fxml;
     opens com.example.opt3.Controller to javafx.fxml;
+    exports com.example.opt3.Controller;
+    opens com.example.opt3.Model to javafx.fxml;
+    exports com.example.opt3.Model;
+
 }

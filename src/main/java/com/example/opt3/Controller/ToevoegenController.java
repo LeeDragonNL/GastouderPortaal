@@ -65,10 +65,10 @@ public class ToevoegenController implements Initializable {
 
         if(Bevestig.isSelected()) {
             Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),HouseNumber.getText(),Feeding.getText(),GEWICHT.getText());
-            Gebruiker.people.add(newBaby);
-            ArrayList<Babies> babies = database.reader("Babies.json");
-            babies.add(newBaby);
-            database.writer(babies, "Babies.json");
+//            Gebruiker.people.add(newBaby);
+//            ArrayList<Babies> babies = database.reader();
+//            babies.add(newBaby);
+//            database.writer(babies);
 
             ResourceLoader.changeScene(event, "Display-all-view.fxml");
         }

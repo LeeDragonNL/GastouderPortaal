@@ -11,29 +11,29 @@ public abstract class Gebruiker {
         Adres adres;
         Omzet omzet;
         Login login;
-        boolean status = false;
-        final ObservableList<Babies> kinderen = FXCollections.observableArrayList();
-        public static final ObservableList<Babies> people;
-        static {
-            people = FXCollections.observableArrayList(
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
-                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble())
-            );
-        }
+
+//        final ObservableList<Babies> kinderen = FXCollections.observableArrayList();
+//        public static final ObservableList<Babies> people;
+//        static {
+//            people = FXCollections.observableArrayList(
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble()),
+//                    new Babies("welkom", randomInt(), "eggef","egrge",randomInt(),"ergerg",randomDouble())
+//            );
+//        }
 
         public Gebruiker(){
-
+            super();
         }
 
 
-     public Gebruiker(String name, String straat, String postcode, int huisnummer, double loon, double totaleomzet, int uren, String username, String password) {
+     public Gebruiker(String name, String straat, String postcode, int huisnummer, double loon, String username, String password) {
             this.adres = new Adres();
             this.omzet = new Omzet();
             this.login = new Login();
@@ -43,24 +43,22 @@ public abstract class Gebruiker {
             this.adres.setPostcode(postcode);
             this.adres.setHuisnummer(huisnummer);
             this.omzet.setLoon(loon);
-            this.omzet.setTotaleOmzet(totaleomzet);
-            this.omzet.setTotaleUren(uren);
             this.login.setUsername(username);
             this.login.setPassword(password);
         }
 
 
-        public static int randomInt(){
-            int max = 5;
-            int min = 0;
-            return random.nextInt(max - min + 1) + min;
-        }
-
-        public static double randomDouble(){
-        double max = 10000;
-        double min = 0;
-        return random.nextDouble(max - min + 1) + min;
-    }
+//        public static int randomInt(){
+//            int max = 5;
+//            int min = 0;
+//            return random.nextInt(max - min + 1) + min;
+//        }
+//
+//        public static double randomDouble(){
+//        double max = 10000;
+//        double min = 0;
+//        return random.nextDouble(max - min + 1) + min;
+//    }
 
         public boolean loginCheck(String un, String pw){
         return un.equals(login.getUsername()) && pw.equals(login.getPassword());
@@ -82,7 +80,11 @@ public abstract class Gebruiker {
             this.adres = adres;
         }
 
-        public ObservableList<Babies> getKinderen() {
-        return kinderen;
-    }
+        public Omzet getOmzet() { return omzet;}
+
+        public void setOmzet(Omzet omzet) { this.omzet = omzet;}
+
+        public Login getLogin() { return login;}
+
+        public void setLogin(Login login) { this.login = login;}
 }

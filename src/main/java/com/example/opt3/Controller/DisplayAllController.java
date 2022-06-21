@@ -74,6 +74,6 @@ public class DisplayAllController implements Initializable {
                 new StringFilter<>("Postcode", Babies::getPostcode)
         );
 
-        table.setItems(Gebruiker.people);
+//        table.setItems(Gebruiker.people);
     }
 }

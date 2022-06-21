@@ -6,6 +6,8 @@ public class Login {
     private String username;
     private String password;
 
+    Database database = new Database();
+
     public String getUsername() {
         return username;
     }
@@ -24,23 +26,20 @@ public class Login {
 
 
 
-    public boolean loginCheck(String un, String pw){
-        Database database = new Database();
-        ArrayList<Gebruiker> gebruikers = database.reader2("Gebruiker.json");
-
-
-
-        for (Gebruiker gebruiker: gebruikers) {
-
-            if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
-
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-        return false;
-    }
+//    public boolean loginCheck(String un, String pw){
+//
+//        ArrayList<Gastouder> gebruikers = database.reader();
+//
+//        for (Gastouder gebruiker: gebruikers) {
+//            if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
+//
+//                return true;
+//            }
+//            else{
+//                return false;
+//            }
+//        }
+//        return false;
+//    }
 
 }
