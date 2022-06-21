@@ -1,17 +1,22 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.Model.Babies;
-import com.example.opt3.Model.Gebruiker;
+import com.example.opt3.Model.Database;
+import com.example.opt3.Model.users.Babies;
+import com.example.opt3.Model.users.Gastouder;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
 import io.github.palexdev.materialfx.controls.MFXTableView;
 import io.github.palexdev.materialfx.controls.cell.MFXTableRowCell;
 import io.github.palexdev.materialfx.filter.DoubleFilter;
 import io.github.palexdev.materialfx.filter.IntegerFilter;
 import io.github.palexdev.materialfx.filter.StringFilter;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.Comparator;
@@ -36,14 +41,24 @@ public class DisplayAllController implements Initializable {
     @FXML
     private MFXTableColumn<Babies> straatColumn;
 
+    private ObservableList<Babies> people;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setupTable();
         table.autosizeColumnsOnInitialization();
+
+
     }
 
-    private void setupTable(){
+    public void onDisplayButton(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Gastouder gastouder = (Gastouder) stage.getUserData();
+
+        this.people = FXCollections.observableArrayList();
+        this.people.addAll(gastouder.getPeople());
+
         nameColumn = new MFXTableColumn<>("NAME",true, Comparator.comparing(Babies::getNaam));
         ageColumn = new MFXTableColumn<>("LEEFTIJD",true, Comparator.comparing(Babies::getLeeftijd));
         voedingColumn = new MFXTableColumn<>("VOEDING",true, Comparator.comparing(Babies::getVoeding));
@@ -74,6 +89,6 @@ public class DisplayAllController implements Initializable {
                 new StringFilter<>("Postcode", Babies::getPostcode)
         );
 
-//        table.setItems(Gebruiker.people);
+        table.setItems(people);
     }
 }

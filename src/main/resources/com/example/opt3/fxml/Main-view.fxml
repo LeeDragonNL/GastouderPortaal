@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="480.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.MainController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="480.0" prefWidth="193.0" spacing="30.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <MFXButton fx:id="Omzet" onAction="#onOmzetButton" prefHeight="51.0" prefWidth="145.0" text="OMZET" />
+            <MFXButton fx:id="Exit" onAction="#onExitButton" prefHeight="51.0" prefWidth="145.0" text="EXIT" />
+            <MFXButton fx:id="Profiel" onAction="#onProfielButton" prefHeight="51.0" prefWidth="145.0" text="PROFIEL" />
+            <MFXButton fx:id="uitloggen" onAction="#onUitlogButton" prefHeight="51.0" prefWidth="145.0" text="UITLOGGEN" />
+         </children>
+      </VBox>
+      <StackPane fx:id="contentPane" layoutX="193.0" layoutY="-3.0" prefHeight="486.0" prefWidth="554.0" />
+   </children>
+</AnchorPane>

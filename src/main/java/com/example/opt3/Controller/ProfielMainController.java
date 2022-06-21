@@ -1,29 +1,25 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.MainApplication;
+
 import com.example.opt3.Model.ResourceLoader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
+
 
 import java.io.IOException;
 
 public class ProfielMainController {
-    @FXML
-    public void onVerwijderButton(ActionEvent event){
 
-    }
+    public StackPane contentPane;
+
     @FXML
     public void onToevoegenButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Toevoegen-view.fxml");
+        contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Toevoegen-view.fxml"));
     }
     @FXML
     public void onBekijkButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Display-all.fxml");
+        contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Display-all-view.fxml"));
     }
     @FXML
     public void onBewerkButton(ActionEvent event){
@@ -31,6 +27,10 @@ public class ProfielMainController {
     }
 
     public void onTerugButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Main-view.fxml");
+        ResourceLoader.changeScene(event,"fxml/Main-view.fxml");
+    }
+
+    public void onVerwijderenButton(ActionEvent event) {
+
     }
 }

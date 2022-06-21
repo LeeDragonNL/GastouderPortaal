@@ -1,34 +1,25 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.MainApplication;
 import com.example.opt3.Model.ResourceLoader;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
+import javafx.scene.layout.StackPane;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainController implements Initializable {
+public class MainController{
     @FXML
-    public MFXButton Profiel;
-    public Label Bedrijfnaam;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-    }
+    private MFXButton Profiel;
+    @FXML
+    private StackPane contentPane;
 
     public void onOmzetButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Omzet-view");
+        contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Omzet-view.fxml"));
     }
 
     public void onExitButton(ActionEvent event) {
@@ -36,10 +27,10 @@ public class MainController implements Initializable {
     }
 
     public void onProfielButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Profiel_Main_view.fxml");
+        ResourceLoader.changeScene(event,"fxml/Profiel_Main_view.fxml");
     }
 
     public void onUitlogButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Login-view.fxml");
+        ResourceLoader.changeScene(event,"fxml/Login-view.fxml");
     }
 }

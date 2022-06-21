@@ -35,11 +35,11 @@
          <font>
             <Font size="14.0" />
          </font></MFXComboBox>
-      <MFXTextField fx:id="Gebruikersnaam" alignment="CENTER" floatMode="ABOVE" layoutX="125.0" layoutY="128.0" prefHeight="50.0" prefWidth="269.0" promptText="Gebruikersnaam">
+      <MFXTextField fx:id="username" alignment="CENTER" floatMode="ABOVE" layoutX="125.0" layoutY="128.0" prefHeight="50.0" prefWidth="269.0" promptText="Gebruikersnaam">
          <font>
             <Font size="14.0" />
          </font></MFXTextField>
-      <MFXPasswordField fx:id="Wachtwoord" alignment="CENTER" floatMode="ABOVE" layoutX="439.0" layoutY="129.0" prefHeight="49.0" prefWidth="269.0" promptText="Wachtwoord">
+      <MFXPasswordField fx:id="password" alignment="CENTER" floatMode="ABOVE" layoutX="439.0" layoutY="129.0" prefHeight="49.0" prefWidth="269.0" promptText="Wachtwoord">
          <font>
             <Font size="14.0" />
          </font></MFXPasswordField>
@@ -63,5 +63,6 @@
             <Font size="18.0" />
          </font>
       </MFXButton>
+      <Label fx:id="tryAgain" layoutX="440.0" layoutY="178.0" prefHeight="17.0" prefWidth="373.0" textFill="#c33030" />
    </children>
 </AnchorPane>

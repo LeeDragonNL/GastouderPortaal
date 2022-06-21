@@ -12,9 +12,10 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(MainApplication.class.getResource("Login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("fxml/Login-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Dashboard!");
-        stage.setScene(new Scene(root));
+        stage.setScene(scene);
         stage.show();
     }
 

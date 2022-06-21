@@ -13,5 +13,7 @@ module com.example.opt3 {
     exports com.example.opt3.Controller;
     opens com.example.opt3.Model to javafx.fxml;
     exports com.example.opt3.Model;
+    exports com.example.opt3.Model.users;
+    opens com.example.opt3.Model.users to javafx.fxml;
 
 }

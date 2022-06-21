@@ -20,6 +20,14 @@ public class ResourceLoader {
         window.setScene(new Scene(root));
     }
 
+    public static Parent test (ActionEvent event, String url) throws IOException {
+        FXMLLoader loader = new FXMLLoader(MainApplication.class.getResource(url));
+
+        Parent root = loader.load();
+        return root;
+
+    }
+
     public static Boolean isDouble(String str){
         try {
 

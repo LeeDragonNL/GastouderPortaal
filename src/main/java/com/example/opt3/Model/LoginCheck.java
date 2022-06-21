@@ -1,10 +1,12 @@
 package com.example.opt3.Model;
 
+import com.example.opt3.Model.users.Gastouder;
+
 import java.util.ArrayList;
 
 public class LoginCheck {
     Database database = new Database();
-    ArrayList<Gastouder> people = new ArrayList<>();
+    ArrayList<Gastouder> people;
     public Gastouder gastouders = new Gastouder();
 
     public LoginCheck(){

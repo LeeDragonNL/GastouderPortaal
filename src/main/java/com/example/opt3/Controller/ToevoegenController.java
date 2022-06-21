@@ -1,16 +1,18 @@
 package com.example.opt3.Controller;
 
 import com.example.opt3.Model.*;
+import com.example.opt3.Model.users.Babies;
+import com.example.opt3.Model.users.Gastouder;
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
-import io.github.palexdev.materialfx.controls.MFXStepperToggle;
 import io.github.palexdev.materialfx.controls.MFXTextField;
-import io.github.palexdev.materialfx.utils.NumberUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -46,40 +48,44 @@ public class ToevoegenController implements Initializable {
         Name.setPromptText("Naam...");
         Name.getValidator().constraint("Naam moet minimaal 3 tekens bevatten...", Name.textProperty().length().greaterThanOrEqualTo(3));
         Age.setPromptText("Leeftijd...");
-//        Age.getValidator().constraint("Moet een cijfer zijn", Age.textProperty().)
         Street.setPromptText("Straatnaam...");
-
         Postcode.setPromptText("Postcode");
-
         Feeding.setPromptText("Voeding...");
-
         HouseNumber.setPromptText("Huisnummer...");
-
         GEWICHT.setPromptText("Gewicht");
-
-
     }
 
-    public void onToevoegenButton(ActionEvent event) throws IOException {
+    public void onToevoegenButton(ActionEvent event){
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        Gastouder gastouder = (Gastouder) stage.getUserData();
         Database database = new Database();
+        try {
+            if (Bevestig.isSelected()) {
 
-        if(Bevestig.isSelected()) {
-            Babies newBaby = new Babies(Name.getText(),Age.getText(),Street.getText(),Postcode.getText(),HouseNumber.getText(),Feeding.getText(),GEWICHT.getText());
-//            Gebruiker.people.add(newBaby);
-//            ArrayList<Babies> babies = database.reader();
-//            babies.add(newBaby);
-//            database.writer(babies);
+                Integer.parseInt(HouseNumber.getText());
+                Integer.parseInt(Age.getText());
+                Double.parseDouble(GEWICHT.getText());
 
-            ResourceLoader.changeScene(event, "Display-all-view.fxml");
-        }
-        else{
-            bevestigLabel.setTextFill(Color.color(1,0,0));
+//                Babies newBaby = new Babies(Name.getText(), Age.getText(), Street.getText(), Postcode.getText(), HouseNumber.getText(), Feeding.getText(), GEWICHT.getText());
+                Babies newBabies = new Babies(Name.getText(),Integer.parseInt(Age.getText()),Street.getText(),Postcode.getText(),Integer.parseInt(HouseNumber.getText()),Feeding.getText(),Double.parseDouble(GEWICHT.getText()));
+                gastouder.getPeople().add(newBabies);
+
+                ArrayList<Gastouder> gastouderArrayLists = database.reader();
+                gastouderArrayLists.add(gastouder);
+                database.writer(gastouderArrayLists);
+
+            }
+            else {
+                bevestigLabel.setTextFill(Color.color(1, 0, 0));
+            }
+        }catch (NumberFormatException e){
+            System.out.println(e);
+
         }
     }
 
     public void OnTerugbutton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"Profiel_Main_view.fxml");
+        ResourceLoader.changeScene(event,"fxml/Profiel_Main_view.fxml");
     }
-
-
 }

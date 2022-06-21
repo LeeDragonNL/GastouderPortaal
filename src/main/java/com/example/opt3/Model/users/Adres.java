@@ -1,4 +1,4 @@
-package com.example.opt3.Model;
+package com.example.opt3.Model.users;
 
 public class Adres {
     String straatnaam;

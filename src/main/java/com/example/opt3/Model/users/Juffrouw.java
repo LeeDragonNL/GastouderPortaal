@@ -1,4 +1,6 @@
-package com.example.opt3.Model;
+package com.example.opt3.Model.users;
+
+import com.example.opt3.Model.Login;
 
 public class Juffrouw extends Gebruiker {
     public Juffrouw(String name, String straat, String postcode, int huisnummer, double loon, String username, String password) {
