@@ -14,7 +14,8 @@ public class Database {
     public void writer(ArrayList<Gastouder> gebruikers) {
         File file = new File("src/main/resources/com/example/opt3/json/Gebruikers.json");
         try {
-            mapper.writeValue(new File(String.valueOf(file)), gebruikers);
+
+            mapper.writeValue((file), gebruikers);
 
         } catch (IOException e) {
             e.printStackTrace();

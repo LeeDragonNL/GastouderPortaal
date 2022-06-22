@@ -11,7 +11,7 @@ public abstract class Gebruiker {
         Adres adres;
         Omzet omzet;
         Login login;
-        private ArrayList<Babies> people = new ArrayList<>();
+        ArrayList<Babies> people = new ArrayList<>();
 
         public Gebruiker(){
             super();

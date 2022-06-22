@@ -1,6 +1,7 @@
 package com.example.opt3.Controller;
 
 import com.example.opt3.Model.Database;
+import com.example.opt3.Model.ExistenceCheck;
 import com.example.opt3.Model.users.Gastouder;
 import com.example.opt3.Model.ResourceLoader;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
@@ -129,22 +130,28 @@ public class RegistreerController implements Initializable {
     }
 
     public void onTerugButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"fxml/Login-view");
+        ResourceLoader.changeScene(event,"fxml/Login-view.fxml");
     }
 
     public void onRegistrerenButton(ActionEvent event) {
+        ExistenceCheck existenceCheck = new ExistenceCheck();
         if (Bevestig.isSelected()) {
             try {
                 int hs = Integer.parseInt(Huinummer.getText());
                 double loon = Double.parseDouble(Loon.getText());
 
-                Database database = new Database();
-                Gastouder gastouder = new Gastouder(Bedrijfnaam.getText(), Straatnaam.getText(), Postcode.getText(), hs, loon, username.getText(), password.getText());
-                ArrayList<Gastouder> gebruikers = database.reader();
-                gebruikers.add(gastouder);
-                database.writer(gebruikers);
+                if (!existenceCheck.checkIfExist(username.getText())) {
 
-                ResourceLoader.changeScene(event, "fxml/Login-view.fxml");
+                    Gastouder newGastouder = new Gastouder(Bedrijfnaam.getText(), Straatnaam.getText(), Postcode.getText(), hs, loon, username.getText(), password.getText());
+                    Database database = new Database();
+
+                    ArrayList<Gastouder> gebruikers = database.reader();
+
+                    gebruikers.add(newGastouder);
+                    database.writer(gebruikers);
+
+                    ResourceLoader.changeScene(event, "fxml/Login-view.fxml");
+                }
 
             } catch (NumberFormatException | IOException e) {
                 System.out.println("probleempje");

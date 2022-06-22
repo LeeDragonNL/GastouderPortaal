@@ -20,6 +20,7 @@ public class MainController{
 
     public void onOmzetButton(ActionEvent event) throws IOException {
         contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Omzet-view.fxml"));
+//        ResourceLoader.changeScene(event,"fxml/Omzet-view.fxml");
     }
 
     public void onExitButton(ActionEvent event) {

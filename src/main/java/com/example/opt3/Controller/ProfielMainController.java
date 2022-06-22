@@ -15,10 +15,12 @@ public class ProfielMainController {
 
     @FXML
     public void onToevoegenButton(ActionEvent event) throws IOException {
+//        ResourceLoader.changeScene(event,);
         contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Toevoegen-view.fxml"));
     }
     @FXML
     public void onBekijkButton(ActionEvent event) throws IOException {
+//        ResourceLoader.changeScene(event,);
         contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Display-all-view.fxml"));
     }
     @FXML

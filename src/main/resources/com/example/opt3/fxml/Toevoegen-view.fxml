@@ -29,5 +29,15 @@
          <font>
             <Font size="18.0" />
          </font></Label>
+      <Label fx:id="leeftijdLabel" alignment="CENTER" layoutX="33.0" layoutY="173.0" prefHeight="18.0" prefWidth="226.0" textFill="#c44343">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="gewichtLabel" alignment="CENTER" layoutX="332.0" layoutY="259.0" prefHeight="18.0" prefWidth="226.0" textFill="#c44343">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
