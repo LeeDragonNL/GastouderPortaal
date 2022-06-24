@@ -1,6 +1,7 @@
 package com.example.opt3.Controller;
 
 import com.example.opt3.Model.Database;
+import com.example.opt3.Model.users.Adres;
 import com.example.opt3.Model.users.Babies;
 import com.example.opt3.Model.users.Gastouder;
 import io.github.palexdev.materialfx.controls.MFXTableColumn;
@@ -24,7 +25,7 @@ import java.util.ResourceBundle;
 public class DisplayAllController implements Initializable {
 
     @FXML
-    private MFXTableView<Babies> table = new MFXTableView<>();
+    private MFXTableView<Babies>table = new MFXTableView<>();
     @FXML
     private MFXTableColumn<Babies> nameColumn;
     @FXML
@@ -33,6 +34,12 @@ public class DisplayAllController implements Initializable {
     private MFXTableColumn<Babies> voedingColumn;
     @FXML
     private MFXTableColumn<Babies> gewichtColumn;
+//    @FXML
+//    private MFXTableColumn<Adres> straatColumn;
+//    @FXML
+//    private MFXTableColumn<Adres> postcodeColumn;
+//    @FXML
+//    private MFXTableColumn<Adres> huisnummerColumn;
 
     private ObservableList<Babies> people;
 
@@ -44,11 +51,20 @@ public class DisplayAllController implements Initializable {
         ageColumn = new MFXTableColumn<>("LEEFTIJD",true, Comparator.comparing(Babies::getLeeftijd));
         voedingColumn = new MFXTableColumn<>("VOEDING",true, Comparator.comparing(Babies::getVoeding));
         gewichtColumn = new MFXTableColumn<>("GEWICHT",true, Comparator.comparing(Babies::getGewicht));
+//        straatColumn = new MFXTableColumn<>("STRAATNAAM",true, Comparator.comparing(Adres::getStraatnaam));
+//        postcodeColumn = new MFXTableColumn<>("STRAATNAAM",true, Comparator.comparing(Adres::getPostcode));
+//        huisnummerColumn = new MFXTableColumn<>("STRAATNAAM",true, Comparator.comparing(Adres::getHuisnummer));
+
+
 
         nameColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Babies::getNaam));
         ageColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Babies::getLeeftijd));
         voedingColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Babies::getVoeding));
         gewichtColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Babies::getGewicht));
+//        straatColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Adres::getStraatnaam));
+//        postcodeColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Adres::getPostcode));
+//        huisnummerColumn.setRowCellFactory(gebruiker -> new MFXTableRowCell<>(Adres::getHuisnummer));
+
 
         table.getTableColumns().addAll(nameColumn,ageColumn,voedingColumn,gewichtColumn);
         table.getFilters().addAll(
@@ -57,6 +73,7 @@ public class DisplayAllController implements Initializable {
                 new IntegerFilter<>("leeftijd", Babies::getLeeftijd),
                 new StringFilter<>("voeding", Babies::getVoeding),
                 new DoubleFilter<>("Gewicht", Babies::getGewicht)
+
         );
     }
 
