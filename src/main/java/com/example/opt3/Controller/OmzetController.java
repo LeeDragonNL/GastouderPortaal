@@ -82,11 +82,6 @@ public class OmzetController implements Initializable {
         table.setItems(invoers);
         table.update();
 
-
-//        StringConverter<Invoer> converter = FunctionalStringConverter.to(Invoer -> (Invoer == null) ? "" : "Aantal kinderen: " + Invoer.getAantalKinderen() + "     Aantal uren: " + Invoer.getUur() + "     Datum: " + Invoer.getDatum());
-//        geschiedenis.setItems(invoers);
-//        geschiedenis.setConverter(converter);
-
     }
     @FXML
     public void onClearButton(ActionEvent event) {

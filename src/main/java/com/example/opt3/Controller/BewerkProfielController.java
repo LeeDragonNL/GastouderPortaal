@@ -1,37 +1,39 @@
 package com.example.opt3.Controller;
 
-import com.example.opt3.Model.ResourceLoader;
 import com.example.opt3.Model.users.Babies;
 import com.example.opt3.Model.users.Gastouder;
 import io.github.palexdev.materialfx.controls.MFXListView;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.utils.others.FunctionalStringConverter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import java.io.IOException;
 
-public class OverzichtController {
+public class BewerkProfielController {
     @FXML
-    private Label bedrijfnaam;
+    private MFXListView<Babies> list;
     @FXML
-    private Label straatnaam;
+    private MFXTextField naam;
     @FXML
-    private Label huisnummer;
+    private MFXTextField leeftijd;
     @FXML
-    private Label postcode;
+    private MFXTextField straat;
     @FXML
-    private Label aantalkinderen;
+    private MFXTextField postcode;
     @FXML
-    private MFXListView<Babies> allekinderen;
+    private MFXTextField huisnummer;
+    @FXML
+    private MFXTextField voeding;
+    @FXML
+    private MFXTextField gewicht;
     private ObservableList<Babies> people;
 
 
-    public void onDIsplayButton(ActionEvent event) {
+    public void onLoadlistButton(ActionEvent event) {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Gastouder gastouder = (Gastouder) stage.getUserData();
@@ -41,17 +43,12 @@ public class OverzichtController {
 
         StringConverter<Babies> converter = FunctionalStringConverter.to(Babies -> (Babies == null) ? "" : Babies.getNaam());
 
-        allekinderen.setItems(people);
-        allekinderen.setConverter(converter);
+        list.setItems(people);
+        list.setConverter(converter);
 
-        bedrijfnaam.setText(gastouder.getName());
-        straatnaam.setText(gastouder.getAdres().getStraatnaam());
-        huisnummer.setText(String.valueOf(gastouder.getAdres().getHuisnummer()));
-        postcode.setText(gastouder.getAdres().getPostcode());
-        aantalkinderen.setText(String.valueOf(gastouder.getPeople().size()));
+
     }
 
-    public void onEditButton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"fxml/UserEdit-view.fxml");
+    public void onConfirmButton(ActionEvent event) {
     }
 }

@@ -24,15 +24,12 @@ public class ProfielMainController {
         contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Display-all-view.fxml"));
     }
     @FXML
-    public void onBewerkButton(ActionEvent event){
+    public void onBewerkButton(ActionEvent event) throws IOException {
+        contentPane.getChildren().setAll(ResourceLoader.test(event,"fxml/Bewerk-Profiel-view.fxml"));
 
     }
 
     public void onTerugButton(ActionEvent event) throws IOException {
         ResourceLoader.changeScene(event,"fxml/Main-view.fxml");
-    }
-
-    public void onVerwijderenButton(ActionEvent event) {
-
     }
 }

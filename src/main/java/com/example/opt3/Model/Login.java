@@ -8,8 +8,6 @@ public class Login {
     private String username;
     private String password;
 
-    Database database = new Database();
-
     public String getUsername() {
         return username;
     }
@@ -25,23 +23,5 @@ public class Login {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
-//    public boolean loginCheck(String un, String pw){
-//
-//        ArrayList<Gastouder> gebruikers = database.reader();
-//
-//        for (Gastouder gebruiker: gebruikers) {
-//            if (un.equals(gebruiker.login.getUsername()) && pw.equals(gebruiker.login.getPassword())){
-//
-//                return true;
-//            }
-//            else{
-//                return false;
-//            }
-//        }
-//        return false;
-//    }
 
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="486.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.BewerkProfielController">
+   <children>
+      <VBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="452.0" prefWidth="295.0" spacing="20.0">
+         <children>
+            <MFXListView fx:id="list" prefHeight="280.0" prefWidth="186.0" />
+            <HBox alignment="CENTER" prefHeight="62.0" prefWidth="295.0" spacing="20.0">
+               <children>
+                  <MFXButton onAction="#onLoadlistButton" prefHeight="43.0" prefWidth="89.0" text="loaddata" />
+                  <MFXButton onAction="#onConfirmButton" prefHeight="43.0" prefWidth="89.0" text="Confirm" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="254.0" layoutY="9.0" prefHeight="453.0" prefWidth="402.0" spacing="20.0">
+         <children>
+            <MFXTextField fx:id="naam" prefHeight="50.0" prefWidth="243.0" />
+            <MFXTextField fx:id="leeftijd" prefHeight="50.0" prefWidth="243.0" />
+            <MFXTextField fx:id="straat" prefHeight="50.0" prefWidth="243.0" text="DEZE PAGINA IS NOG IN ONTWIKKELING" />
+            <MFXTextField fx:id="postcode" prefHeight="50.0" prefWidth="243.0" />
+            <MFXTextField fx:id="huisnummer" prefHeight="50.0" prefWidth="243.0" />
+            <MFXTextField fx:id="voeding" prefHeight="50.0" prefWidth="243.0" />
+            <MFXTextField fx:id="gewicht" prefHeight="50.0" prefWidth="243.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

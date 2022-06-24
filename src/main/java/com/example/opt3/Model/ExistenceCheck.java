@@ -18,14 +18,4 @@ public class ExistenceCheck {
         }
         return false;
     }
-
-    public boolean checkIfTheSame(String str1, String str2){
-        if (str1.equals(str2)){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
 }

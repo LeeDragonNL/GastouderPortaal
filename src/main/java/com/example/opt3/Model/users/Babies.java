@@ -27,19 +27,6 @@ public class Babies extends Kinderen {
         this.gewicht = gewicht;
     }
 
-
-//    public String getStraat(){
-//        return adres.straatnaam;
-//    }
-//
-//    public String getPostcode(){
-//        return adres.postcode;
-//    }
-//
-//    public int getHuisNummer(){
-//        return adres.huisnummer;
-//    }
-
     public String getVoeding() {
         return voeding;
     }
