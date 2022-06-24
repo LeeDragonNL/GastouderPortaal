@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="486.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.WerkDagController">
+   <VBox alignment="CENTER" prefHeight="486.0" prefWidth="554.0" spacing="30.0">
+      <children>
+         <MFXComboBox fx:id="Uren" alignment="CENTER" floatMode="ABOVE" prefHeight="40.0" prefWidth="302.0" promptText="HOEVEEL UUR HEEFT U GEWERKT VANDAAG" />
+         <MFXComboBox fx:id="Kinderen" alignment="CENTER" floatMode="ABOVE" prefHeight="40.0" prefWidth="302.0" promptText="HOEVEEL KINDEREN HAD U VANDAAG" />
+         <HBox alignment="CENTER" prefHeight="42.0" prefWidth="554.0" spacing="10.0">
+            <children>
+               <MFXCheckbox fx:id="Bevestig" />
+               <Label fx:id="bevestiglabel" text="BEVESTIGEN">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <MFXButton alignment="CENTER" contentDisplay="CENTER" onAction="#onWerkenButton" prefHeight="44.0" prefWidth="139.0" text="WERKEN">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </MFXButton>
+         <Label fx:id="SuccesvolWerk" alignment="CENTER">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+      </children>
+   </VBox>
+</AnchorPane>

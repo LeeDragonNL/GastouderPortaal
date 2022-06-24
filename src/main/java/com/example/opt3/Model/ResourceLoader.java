@@ -27,22 +27,4 @@ public class ResourceLoader {
         return root;
 
     }
-
-    public static Boolean isDouble(String str){
-        try {
-
-            Double.parseDouble(str);
-            return true;
-        } catch (NumberFormatException e){
-            return false;
-        }
-    }
-    public static boolean isInt(String str){
-        try {
-            Integer.parseInt(str);
-            return true;
-        } catch (NumberFormatException e){
-            return false;
-        }
-    }
 }

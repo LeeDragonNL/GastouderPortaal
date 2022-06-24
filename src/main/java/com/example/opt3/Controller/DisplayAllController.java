@@ -33,6 +33,7 @@ public class DisplayAllController implements Initializable {
     private MFXTableColumn<Babies> voedingColumn;
     @FXML
     private MFXTableColumn<Babies> gewichtColumn;
+
     private ObservableList<Babies> people;
 
     @Override

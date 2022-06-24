@@ -16,13 +16,9 @@
       <MFXTextField fx:id="Feeding" alignment="CENTER" floatMode="ABOVE" layoutX="332.0" layoutY="123.0" prefHeight="50.0" prefWidth="226.0" />
       <MFXTextField fx:id="HouseNumber" alignment="CENTER" floatMode="ABOVE" layoutX="332.0" layoutY="42.0" prefHeight="50.0" prefWidth="226.0" />
       <MFXTextField fx:id="GEWICHT" alignment="CENTER" floatMode="ABOVE" layoutX="332.0" layoutY="209.0" prefHeight="50.0" prefWidth="226.0" />
-      <MFXButton fx:id="Toevoegen" buttonType="RAISED" layoutX="306.0" layoutY="335.0" onAction="#onToevoegenButton" prefHeight="50.0" prefWidth="98.0" text="TOEVOEGEN">
+      <MFXButton fx:id="Toevoegen" buttonType="RAISED" layoutX="386.0" layoutY="335.0" onAction="#onToevoegenButton" prefHeight="50.0" prefWidth="118.0" text="TOEVOEGEN">
          <font>
-            <Font name="System Bold" size="12.0" />
-         </font></MFXButton>
-      <MFXButton fx:id="Terug" buttonType="RAISED" layoutX="444.0" layoutY="335.0" onAction="#OnTerugbutton" prefHeight="50.0" prefWidth="98.0" text="TERUG">
-         <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="14.0" />
          </font></MFXButton>
       <MFXCheckbox fx:id="Bevestig" alignment="CENTER" contentDisplay="CENTER" contentDisposition="CENTER" layoutX="369.0" layoutY="292.0" />
       <Label fx:id="bevestigLabel" layoutX="422.0" layoutY="288.0" text="BEVESTIG DATA">

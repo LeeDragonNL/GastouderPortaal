@@ -55,10 +55,7 @@ public class ToevoegenController implements Initializable {
     public MFXButton Terug;
 
     private static final PseudoClass INVALID_PSEUDO_CLASS = PseudoClass.getPseudoClass("invalid");
-    private static final String[] upperChar = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split(" ");
-    private static final String[] lowerChar = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ");
     private static final String[] digits = "0 1 2 3 4 5 6 7 8 9".split(" ");
-    private static final String[] specialCharacters = "! @ # & ( ) – [ { } ]: ; ' , ? / * ~ $ ^ + = < > -".split(" ");
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,7 +68,6 @@ public class ToevoegenController implements Initializable {
         HouseNumber.setPromptText("Huisnummer...");
         GEWICHT.setPromptText("Gewicht");
 
-        Name.setTextLimit(10);
         Age.setTextLimit(2);
         GEWICHT.setTextLimit(4);
         Postcode.setTextLimit(6);
@@ -156,17 +152,15 @@ public class ToevoegenController implements Initializable {
                 gastouderArrayLists.add(gastouder);
                 database.writer(gastouderArrayLists);
 
+                ResourceLoader.changeScene(event,"fxml/Profiel-Main-view.fxml");
+
             }
             else {
                 bevestigLabel.setTextFill(Color.color(1, 0, 0));
             }
-        }catch (NumberFormatException e){
+        }catch (NumberFormatException | IOException e){
             System.out.println(e);
 
         }
-    }
-
-    public void OnTerugbutton(ActionEvent event) throws IOException {
-        ResourceLoader.changeScene(event,"fxml/Profiel_Main_view.fxml");
     }
 }

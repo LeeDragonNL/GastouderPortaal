@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="486.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.opt3.Controller.OverzichtController">
+   <VBox alignment="CENTER_RIGHT" layoutY="44.0" prefHeight="322.0" prefWidth="116.0" spacing="30.0" AnchorPane.bottomAnchor="120.0">
+      <Label text="BEDRIJFNAAM :" />
+      <Label text="STRAATNAAM :" />
+      <Label text="HUISNUMMER : " />
+      <Label text="POSTCODE :" />
+      <Label text="AANTAL KINDEREN : " />
+   </VBox>
+   <VBox alignment="CENTER_LEFT" layoutX="137.0" layoutY="44.0" prefHeight="322.0" prefWidth="176.0" spacing="30.0" AnchorPane.bottomAnchor="120.0">
+      <Label fx:id="bedrijfnaam" />
+      <Label fx:id="straatnaam" />
+      <Label fx:id="huisnummer" />
+      <Label fx:id="postcode" />
+      <Label fx:id="aantalkinderen" />
+   </VBox>
+   <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="58.0" layoutY="379.0" onAction="#onDIsplayButton" prefHeight="46.0" prefWidth="105.0" rippleAnimateShadow="true" text="Display" />
+   <VBox alignment="CENTER" layoutX="313.0" layoutY="44.0" prefHeight="382.0" prefWidth="206.0" spacing="10.0">
+      <Label text="Alle Kinderen">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <MFXListView fx:id="allekinderen" prefHeight="224.0" prefWidth="200.0" />
+   </VBox>
+   <MFXButton buttonType="RAISED" depthLevel="LEVEL1" layoutX="194.0" layoutY="379.0" onAction="#onEditButton" prefHeight="46.0" prefWidth="105.0" rippleAnimateShadow="true" text="Edit" />
+</AnchorPane>
